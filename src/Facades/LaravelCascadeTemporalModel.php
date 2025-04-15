@@ -1,16 +1,17 @@
 <?php
 
-namespace VendorName\Skeleton\Facades;
+namespace Nifrim\LaravelCascade\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Nifrim\LaravelCascade\Models\Temporal;
 
 /**
  * @see \VendorName\Skeleton\Skeleton
  */
-class Skeleton extends Facade
+class LaravelCascadeTemporalModel extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \VendorName\Skeleton\Skeleton::class;
+        return Temporal::class;
     }
 }

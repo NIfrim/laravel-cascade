@@ -1,0 +1,8 @@
+parameters:
+  ignoreErrors:
+    -
+      identifier: new.static
+    -
+      identifier: method.void
+    -
+      identifier: function.alreadyNarrowedType
