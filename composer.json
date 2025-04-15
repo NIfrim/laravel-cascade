@@ -37,17 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Nifrim\\LaravelCascade\\": "src/",
-            "Nifrim\\LaravelCascade\\Association\\": "src/Association/",
-            "Nifrim\\LaravelCascade\\Database\\": "src/Database/",
-            "Nifrim\\LaravelCascade\\Constants\\": "src/Contants/",
-            "Nifrim\\LaravelCascade\\Database\\Factories\\": "database/factories/"
+            "Nifrim\\LaravelCascade\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Nifrim\\LaravelCascade\\Tests\\": "tests/",
-            "Workbench\\App\\": "workbench/app/"
+            "Nifrim\\LaravelCascade\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -70,9 +65,7 @@
             "providers": [
                 "Nifrim\\LaravelCascade\\LaravelCascadeServiceProvider"
             ],
-            "aliases": {
-                "LaravelCascade": "Nifrim\\LaravelCascade\\Facades\\LaravelCascade"
-            }
+            "aliases": {}
         }
     },
     "minimum-stability": "dev",
