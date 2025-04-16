@@ -16,8 +16,8 @@
         }
     ],
     "require": {
-        "php": "^8.4",
-        "laravel/framework": "^12.2",
+        "php": "^8.2",
+        "illuminate/contracts": "^v12.9",
         "nesbot/carbon": "^3.9",
         "spatie/laravel-package-tools": "^1.16"
     },
