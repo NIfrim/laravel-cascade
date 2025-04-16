@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 use Nifrim\LaravelCascade\Models\Temporal;
 
 /**
- * @see \VendorName\Skeleton\Skeleton
+ * @see \Nifrim\LaravelCascade\Models\Temporal
  */
 class LaravelCascadeTemporalModel extends Facade
 {

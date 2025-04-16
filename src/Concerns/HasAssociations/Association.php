@@ -3,7 +3,6 @@
 namespace Nifrim\LaravelCascade\Concerns\HasAssociations;
 
 use Nifrim\LaravelCascade\Constants\AssociationActionType;
-use Nifrim\LaravelCascade\Constants\Model;
 use Nifrim\LaravelCascade\Database\Relations\HasMany;
 use Nifrim\LaravelCascade\Database\Relations\HasManyThrough;
 use Nifrim\LaravelCascade\Database\Relations\HasOne;
@@ -277,9 +276,12 @@ class Association
         }
 
         // Ensure data has updated at value
-        $updatedAtAttribute = [
-            $parentInstance->getUpdatedAtColumn() => $parentInstance->getUpdatedAt(),
-        ];
+        $updatedAtAttribute = [];
+        if ($parentInstance->getUpdatedAtColumn() && method_exists($parentInstance, 'getUpdatedAt')) {
+            $updatedAtAttribute = [
+                $parentInstance->getUpdatedAtColumn() => $parentInstance->getUpdatedAt(),
+            ];
+        }
 
         /** @var null|EloquentModel $existing */
         $existing = isset($data[$primaryKeyName])
@@ -475,7 +477,6 @@ class Association
                 }
                 $modelInstance->resolveRelationUsing($associationName, function (EloquentModel $model) use ($relatedModelClass, $pivotTableName, $pivotThroughModel, $foreignKey, $relatedForeignKey, $relatedPrimaryKey, $associationName) {
                     $modelInstance = new $pivotThroughModel;
-                    $fillableAttributes = $modelInstance->getFillable();
                     $resolver = $model->belongsToMany(
                         $relatedModelClass,
                         $pivotTableName,
@@ -490,6 +491,7 @@ class Association
                         $resolver->withTimestamps();
                     }
 
+                    $fillableAttributes = method_exists($modelInstance, 'getFillable') ? $modelInstance->getFillable() : [];
                     if ($fillableAttributes) {
                         $resolver->withPivot(...$fillableAttributes);
                     }
