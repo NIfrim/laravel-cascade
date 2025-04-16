@@ -16,9 +16,6 @@ class LaravelCascadeServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-cascade')
-            ->hasConfigFile();
-        // ->hasViews()
-        // ->hasMigration('create_laravel_cascade_table')
-        // ->hasCommand(LaravelCascadeCommand::class);
+            ->hasConfigFile('associations-cascade');
     }
 }
