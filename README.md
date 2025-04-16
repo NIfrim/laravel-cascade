@@ -1,4 +1,4 @@
-# A Laravel package that extends Eloquent's model functionality to support compound primary keys and cascading save/delete operations on associated models. This package enables easy specification of relationships while ensuring data integrity by automatically managing related models when saving or deleting parent records.
+# A Laravel package that extends Eloquent's model functionality to support cascading save/delete operations on associated models.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/nifrim/laravel-cascade.svg?style=flat-square)](https://packagist.org/packages/nifrim/laravel-cascade)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/nifrim/laravel-cascade/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/nifrim/laravel-cascade/actions?query=workflow%3Arun-tests+branch%3Amain)
