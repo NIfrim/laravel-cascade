@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 use Nifrim\LaravelCascade\Models\Base;
 
 /**
- * @see \VendorName\Skeleton\Skeleton
+ * @see \Nifrim\LaravelCascade\Models\Base
  */
 class LaravelCascadeModel extends Facade
 {

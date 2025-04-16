@@ -277,9 +277,12 @@ class Association
         }
 
         // Ensure data has updated at value
-        $updatedAtAttribute = [
-            $parentInstance->getUpdatedAtColumn() => $parentInstance->getUpdatedAt(),
-        ];
+        $updatedAtAttribute = [];
+        if ($parentInstance->getUpdatedAtColumn() && method_exists($parentInstance, 'getUpdatedAt')) {
+            $updatedAtAttribute = [
+                $parentInstance->getUpdatedAtColumn() => $parentInstance->getUpdatedAt(),
+            ];
+        }
 
         /** @var null|EloquentModel $existing */
         $existing = isset($data[$primaryKeyName])

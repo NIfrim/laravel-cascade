@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 use Nifrim\LaravelCascade\Models\TemporalPivot;
 
 /**
- * @see \VendorName\Skeleton\Skeleton
+ * @see \Nifrim\LaravelCascade\Models\TemporalPivot
  */
 class LaravelCascadeTemporalPivot extends Facade
 {
